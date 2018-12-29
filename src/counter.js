@@ -2,15 +2,12 @@ import React, { Component } from 'react';
 import './counter.css';
 
 class Counter extends Component {
-  state={ counter: 0 };
+  constructor() {
+    super();
+    this.state={ counter: 0 };
+  }
   handleClick = () => {
-    console.log('handleClick');
-    this.setState(prevState => {
-
-    return {
-      counter: prevState.counter + 1
-    }
-  });
+    this.setState({counter: this.state.counter+1});
 }
   getBgClass(value) {
     if (!value) {
